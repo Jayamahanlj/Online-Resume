@@ -1,66 +1,72 @@
-<!DOCTYPE html>
+<html>
 <head>
-    <title>Online Resume_ Assignment3</title>
+    <title></title>
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
     <div class="main">
-       <nav>                
-            <div class="nav-links">
-                <ul>
-                    <li><a href="#main">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav> 
-        <div class="container"> 
-            <h1> Hello,<span> </span> 
-            My Name is Lanka  </h1>
-           
-        </div>  
-    </div>
-    <section id="about">
-        <div class="about-container">
-            <div class="col">
-                <h1 class="section-title">About Me</h1>
-                <p>I'm Lanka Jayamaha from colombo Sri Lanka.
-                    I'm a Undergraduater in University of 
-                    Sri Jayewardhanepura. I code and design websites, 
-                    also I am good at wordpress
-                </p>
+        <div class="nav">
+            <ul>
+                <a class="a active" href="#">Home</a>
+                <a class="b" href="#">About</a>
+                <a class="c" href="#">Contact</a>
+            </ul>
+        </div>
+
+        <div class="home">
+            <h1>Hello,</h1>
+            <h2>My Name is Lanka</h2>
+        </div>
+        <div class="aboutme">
+            <p>I'm Lanka Jayamaha from Colombo Sri Lanka.<br>
+                I'm a Undergraduater in University of <br>
+                Sri Jayewardhanepura. I code and design websites</p>
+        </div>
+        <div class="contact">
+            <div class="form">
+                <form action="index.html" method="post">
+                    <input type="text" name="" class="inputtext" value="First Name">
+                    <input type="text" name="" class="inputtext" value="Last Name">
+                    <input type="text" name="" class="inputtext" value="Your Email">
+                    <textarea cols="4" rows="6" class="inputmessage">Your Messages...!!!</textarea>
+                    <input type="button" name="" class="submitbutton" value="Submit">
+                </form>
             </div>
         </div>
-    </section>
-    <section id="contact">
-        <div class="contact_container">
-            <div><h1 class="section-title"> Contact Info</h1></div>
-            <div class="contact-info">
-                <h1>Phone</h1>
-                <h2>0768054576</h2>
-            </div>
-        </div>
-        <div class="contact-info">
-            <h1>Email</h1>
-            <h2>lankajayamaha97@gmail.com</h2>
-        </div>
-    </section>
-    <section id="footer">
-        <div class="footer container">
-            <div class="brand">
-                <h1>Lanka Jayamaha</h1>
-            </div>
-            <div class="social-icon">
-                <div class="social-item">
-                    <a href="#"><img src="./apple-mail.png"><span> </span></a>
-                </div>
-                <div class="social-item">
-                    <a href="#"><img src="./facebook-new.png"></a>
-                </div>
-                <div class="social-item">
-                    <a href="#"><img src="./linkedin.png"></a>
-                </div>
-            </div>
-        </div>
-    </section>
+        <script type="text/javascript" src="./jquery-3.5.1.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('a').click(function () {
+                    //    alert("okay");
+                    var selected = $(this);
+                    $('a').removeClass('active');
+                    $(selected).addClass('active');
+                });
+                var $a = $('.a'),
+                    $b = $('.b'),
+                    $c = $('.c'),
+                    $home = $('.home'),
+                    $aboutme = $('.aboutme'),
+                    $contact = $('.contact');
+
+                $a.click(function () {
+                    $home.fadeIn();
+                    $aboutme.fadeOut();
+                    $contact.fadeOut();
+                });
+                $b.click(function () {
+                    $home.fadeOut();
+                    $contact.fadeOut();
+                    $aboutme.fadeIn();
+                });
+                $c.click(function () {
+                    $contact.fadeIn();
+                    $home.fadeOut();
+                    $aboutme.fadeOut();
+                });
+            });
+        </script>
 </body>
+
+</html>
